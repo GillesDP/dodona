@@ -11,7 +11,7 @@
     "typeCheck": "yarn tsc --skipLibCheck --noEmit"
   },
   "dependencies": {
-    "cvg": "1.0.0",
+    "cvg": "https://github.com/jopockel/CVG.git#6a7f68f8b65b832d12920b1c2f61f415dac69716",
     "@babel/core": "^7.20.12",
     "@babel/plugin-proposal-decorators": "^7.20.13",
     "@babel/plugin-transform-runtime": "^7.19.6",

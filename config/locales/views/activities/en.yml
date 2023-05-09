@@ -143,3 +143,8 @@ en:
       close: Close
       start_coding: Run your code
       beta: BETA
+    cvg_editor:
+      title: Draw CFG
+      close: Close
+      start_coding: Draw CFG
+      beta: BETA
