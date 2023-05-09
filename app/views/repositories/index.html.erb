@@ -37,7 +37,6 @@
                 <% if policy(User).server_access? %>
                   <td><%= repository.path %> </td>
                 <% end %>
-                <td><%= link_to repository.judge.name, repository.judge %></td>
                 <td class="actions">
                   <% if policy(repository).admins? %>
                     <%= link_to admins_repository_path(repository), class: "btn btn-icon", title: t(".admins") do %>

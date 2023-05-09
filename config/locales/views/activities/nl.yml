@@ -144,3 +144,9 @@ nl:
       close: Sluiten
       start_coding: Code uitvoeren
       beta: BETA
+    cvg_editor:
+      title: "XXX"
+      experimental_feature_html: XXX.
+      close: Sluiten
+      start_coding: CVG tekenen
+      beta: BETA

@@ -1,9 +1,9 @@
 
 <% content_for :javascripts do %>
-    <%= javascript_include_tag 'cvg' %>
+    <%= javascript_include_tag 'cvg_editor' %>
 <% end %>
 <% content_for :stylesheets do %>
-    <%= stylesheet_link_tag 'cvg_style' %>
+    <%#= stylesheet_link_tag 'cvg_style' %>
 <% end %>
 <button class="btn btn-outline hidden" type="button" data-bs-toggle="offcanvas"
 data-bs-target="#scratchpad-offcanvas" aria-controls="scratchpad-offcanvas" id="scratchpad-offcanvas-show-btn">
@@ -32,4 +32,12 @@ data-bs-target="#scratchpad-offcanvas" aria-controls="scratchpad-offcanvas" id="
     </div>
 </div>
 
-<%= render 'CVG.html' %>
+
+<script type="text/javascript">
+  dodona.ready.then(function () {
+        dodona.initCvgEditor();
+    });
+</script>
+
+
+<%#= render 'CVG.html' %>

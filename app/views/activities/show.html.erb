@@ -9,7 +9,6 @@
       window.dodona.initMathJax();
     </script>
     <script id="MathJax-script" src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'></script>
-    <%= javascript_include_tag 'pythia_submission' if @activity.judge.renderer == PythiaRenderer %>
   <% end %>
 <% end %>
 <%= render 'navbar_links' %>
@@ -163,6 +162,9 @@ end %>
 <% end %>
 <% if @activity.exercise? && @activity.programming_language&.name == 'python' %>
   <%= render partial: 'coding_scratchpad', locals: {activity: @activity} %>
+<% end %>
+<% if @activity.exercise? && @activity.programming_language&.name == 'assembly' %>
+  <%= render partial: 'cvg_editor', locals: {activity: @activity} %>
 <% end %>
 <script type="text/javascript">
     dodona.ready.then(function () {
