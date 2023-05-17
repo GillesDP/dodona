@@ -163,7 +163,7 @@ end %>
 <% if @activity.exercise? && @activity.programming_language&.name == 'python' %>
   <%= render partial: 'coding_scratchpad', locals: {activity: @activity} %>
 <% end %>
-<% if @activity.exercise? && @activity.programming_language&.name == 'assembly' %>
+<% if @activity.exercise? && @activity.programming_language&.name == 'CVG' %>
   <%= render partial: 'cvg_editor', locals: {activity: @activity} %>
 <% end %>
 <script type="text/javascript">

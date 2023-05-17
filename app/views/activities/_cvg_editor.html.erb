@@ -1,9 +1,8 @@
-
 <% content_for :javascripts do %>
     <%= javascript_include_tag 'cvg_editor' %>
 <% end %>
 <% content_for :stylesheets do %>
-    <%#= stylesheet_link_tag 'cvg_style' %>
+    <%= stylesheet_link_tag 'cvg_style' %>
 <% end %>
 <button class="btn btn-outline hidden" type="button" data-bs-toggle="offcanvas"
 data-bs-target="#scratchpad-offcanvas" aria-controls="scratchpad-offcanvas" id="scratchpad-offcanvas-show-btn">
@@ -21,7 +20,102 @@ data-bs-target="#scratchpad-offcanvas" aria-controls="scratchpad-offcanvas" id="
         data-bs-dismiss="offcanvas" aria-label="<%= t '.close' %>"></button>
     </div>
     <div class="offcanvas-body scratchpad-content" style="margin-top: 50px;">
-        input
+    <!DOCTYPE html>
+    <html lang="en">
+    
+    <head>
+      <%= yield :stylesheets %>
+    </head>
+    
+    <body>
+    
+      <h1>CVG Editor designed for Dodona</h1>
+    
+      <br>
+    
+      <div class="network-container">
+    
+        <!-- USER INTERFACE -->
+        <div id="user-interface" class="vis-network">
+          <div class="vis-manipulation">
+            <button class="vis-button vis-add" id="btn-addNode">
+              <div class="vis-label">Nieuw basisblok toevoegen</div>
+            </button>
+            <div class="vis-separator-line"></div>
+            <button class="vis-button vis-connect" id="btn-addSolidEdge">
+              <div class="vis-label" title="Shortcut: S">Voeg sprong toe</div>
+            </button>
+            <div class="vis-separator-line"></div>
+            <button class="vis-button vis-connect" id="btn-addDashedEdge">
+              <div class="vis-label" title="Shortcut: D">Voeg doorvalpad toe</div>
+            </button>
+            <div class="vis-separator-line"></div>
+            <button id="btn-delete" class="vis-button vis-delete">
+              <div class="vis-label" title="Shortcut: DEL">Selectie verwijderen</div>
+            </button>
+            <div class="vis-separator-line"></div>
+            <button id="btn-copy" class="vis-button vis-copy">
+              <div class="vis-label" title="Shortcut: C">Copy Solution</div>
+            </button>
+          </div>
+          <text id="edgetext" style = "position:absolute"></text></id>
+        </div>
+        
+    
+        <div id="message-popUp" >
+          <span style="position: absolute; top: 0px; right: 10px; font-size: 24px; font-weight: bold; cursor: pointer;" id="message-xButton">×</span>
+          <p> <strong>Error!</strong> </p>
+          <table style="margin: auto">
+            <tr>
+              <td>
+                <p id="message">
+              </td>
+            </tr>
+          </table>
+          <input type="button" value="Close" id="message-closeButton" />
+        </div>
+        
+    
+        <br />
+    
+        <!-- GRAPH -->
+        <table width=100%>
+          <tr>
+            <td>
+              <div id="mynetwork"></div>
+            </td>
+            <td><select id="instruction-listing" multiple></select></td>
+          </tr>
+        </table>
+    
+    
+        <h1>View</h1>
+        <table class="view">
+          <colgroup>
+            <col width="25%">
+            <col width="25%">
+            <col width="50%">
+          </colgroup>
+          <tr>
+            <td>
+              <h2>Nodes</h2>
+              <pre id="nodes"></pre>
+            </td>
+    
+            <td>
+              <h2>Edges</h2>
+              <pre id="edges"></pre>
+            </td>
+            <td>
+              <h2>Edges</h2>
+              <pre id="sol_edges"></pre>
+            </td>
+          </tr>
+        </table>
+    
+    </body>
+    
+    </html>
     </div>
 </div>
 
@@ -31,6 +125,3 @@ data-bs-target="#scratchpad-offcanvas" aria-controls="scratchpad-offcanvas" id="
         dodona.initCvgEditor();
     });
 </script>
-
-
-<%#= render 'CVG.html' %>
