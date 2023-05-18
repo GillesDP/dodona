@@ -1,4 +1,4 @@
-import { init, set_code } from "cvg";
+import { init, set_code, copySolution, get_code } from "cvg";
 
 /**
  * Custom interface to not have to add the ace package as dependency
@@ -27,7 +27,6 @@ function initCvgEditor() {
     showButton.classList.remove("hidden");
     showButton.addEventListener("click", async function () {
         // TODO??? singleton
-        
     });
     // Ask user to choose after offcanvas is shown
     document.getElementById(OFFCANVAS_ID).addEventListener("shown.bs.offcanvas", () => {
@@ -35,8 +34,20 @@ function initCvgEditor() {
         editor ||= window.dodona.editor;
         if(editor){
             const editorCode = editor.getValue();
-            set_code(editorCode);
-            init();
+            const currentCode = get_code();
+            if (!editorCode.includes('{')){
+                if (!currentCode || 
+                    (editorCode && currentCode !== editorCode &&
+                        confirm(I18n.t("js.coding_scratchpad.overwrite_code")))) {
+                    set_code(editorCode);
+                    init();
+                    document.getElementById("btn-copy").onclick = function() {
+                        editor.setValue(copySolution());
+                        closeButton.click();
+                        document.getElementById(SUBMIT_TAB_ID)?.click();
+                    }
+                }
+            }
         }
     });
 }

@@ -2936,10 +2936,10 @@ custom-event@^1.0.0:
   resolved "https://registry.npmjs.org/custom-event/-/custom-event-1.0.1.tgz"
   integrity sha512-GAj5FOq0Hd+RsCGVJxZuKaIDXDf3h6GQoNEjFgbLLI/trgtavwUbSnZ5pVfg27DVCaWjIohryS0JFwIJyT2cMg==
 
-cvg@1.1.5:
-  version "1.1.5"
-  resolved "https://registry.npmjs.org/cvg/-/cvg-1.1.5.tgz"
-  integrity sha512-cputp7+k1iHRgtSwrLdsylOD38JUFBC82BO7W7a0KdvTCzSnSpFYAwk63qozm1IJRetwlBx1hgJVFirA8m3JyA==
+cvg@1.1.6:
+  version "1.1.6"
+  resolved "https://registry.npmjs.org/cvg/-/cvg-1.1.6.tgz"
+  integrity sha512-FeQ7d/UkQstw0GFHOAbwPwFV6AreWGl2QN81a2MSQI78V24jviB1U9ohGrUVaIItc15xq2QpnGj/1exFzzy74w==
   dependencies:
     vis-network "^9.1.4"
 
