@@ -80,7 +80,7 @@ pre {
 }
 
 div.vis-network div.vis-manipulation button.vis-button.vis-copy {
-    background-image: url("../images/copyIcon.png");
+    background-image: url("/assets/copyIcon.png");
   }
 
 option::before {
@@ -92,7 +92,7 @@ option::before {
 }
 
 option[data-added]::before {
-    background-image: url("../images/checkmark.png");
+    background-image: url("/assets/checkmark.png");
     width: 24px;
     height: 16px;
 }

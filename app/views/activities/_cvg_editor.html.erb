@@ -8,7 +8,7 @@
 data-bs-target="#scratchpad-offcanvas" aria-controls="scratchpad-offcanvas" id="scratchpad-offcanvas-show-btn">
     <%= t '.start_coding' %>
 </button>
-<div class="offcanvas offcanvas-end" tabindex="-1" id="scratchpad-offcanvas" data-bs-keyboard="false">
+<div class="offcanvas offcanvas-end" tabindex="-1" id="scratchpad-offcanvas" data-bs-keyboard="false" style="width: 85vw; max-width: 100%;">
     <div class="scratchpad-header">
         <h4>
             <%= activity_icon(@activity, 24) %>
@@ -87,32 +87,6 @@ data-bs-target="#scratchpad-offcanvas" aria-controls="scratchpad-offcanvas" id="
             <td><select id="instruction-listing" multiple></select></td>
           </tr>
         </table>
-    
-    
-        <h1>View</h1>
-        <table class="view">
-          <colgroup>
-            <col width="25%">
-            <col width="25%">
-            <col width="50%">
-          </colgroup>
-          <tr>
-            <td>
-              <h2>Nodes</h2>
-              <pre id="nodes"></pre>
-            </td>
-    
-            <td>
-              <h2>Edges</h2>
-              <pre id="edges"></pre>
-            </td>
-            <td>
-              <h2>Edges</h2>
-              <pre id="sol_edges"></pre>
-            </td>
-          </tr>
-        </table>
-    
     </body>
     
     </html>
